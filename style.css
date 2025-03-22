@@ -5,16 +5,17 @@
   --ff-body: "Open Sans", sans serif;
 
   --clr-violet: hsl(257, 40%, 49%);
-  --soft-magenta: hsl(300, 69%, 71%);
+  --clr-soft-magenta: hsl(300, 69%, 71%);
 }
 
 body {
   background-color: var(--clr-violet);
   background-image: url(images/bg-mobile.svg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   min-height: 100vh;
   min-width: 100%;
+  overflow-x : hidden;
 }
 
 header {
@@ -28,8 +29,12 @@ header img {
 main {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 30px;
+  margin-right: 45px;
 }
+
 
 section.hero-img img {
   max-width: 100%;
@@ -45,5 +50,119 @@ section.hero-text h1 {
   font-family: var(--ff-headings);
   font-weight: 600;
   color: white;
-  margin: 0 20px;
+  font-size: 1.6em;
+}
+section.hero-text p{
+  font-family: var(--ff-body);
+  color: white;
+  font-size: 15px;
+  margin: 0px 25px;
+  opacity: 80%;
+  margin-bottom: 1.5rem;
+}
+
+section.hero-text button{
+  border: none;
+  padding: 10px 80px;
+  border-radius: 1rem;
+  color: var(--clr-violet);
+  font-family: var(--ff-body);
+  font-size: 0.8em;
+  font-weight: 500;
+  box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+section.icons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 4rem;
+}
+
+.fa-brands{
+  border: 1px solid white;
+  padding: 8px;
+  color: white;
+  font-size: 10px;
+  border-radius: 18px;
+}
+.fa-facebook-f{
+  width: 10px;
+  text-align: center;
+}
+
+@media(min-width:1200px){
+  main{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    min-width: 90%;
+    min-height: 80%;
+    max-width: 100%;
+    margin:50px;
+  }
+  header{
+    margin-left:30px;
+  }
+  body {
+    background-color: var(--clr-violet);
+    background-image: url(images/bg-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100%;
+    overflow: hidden;
+
+  }
+
+  section.icons{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 4rem;
+    transform: translateX(-30px);
+    grid-column: 2;
+  }
+
+  .fa-brands{
+    border: 1px solid white;
+    padding: 8px;
+    color: white;
+    font-size: 15px;
+    border-radius: 50%;
+    width: 15px;
+    text-align: center;
+  }
+  section.hero-text {
+    text-align: left;
+    padding: 25px;
+  }
+  section.hero-text h1 {
+    font-family: var(--ff-headings);
+    font-weight: 600;
+    color: white;
+    font-size: 3em;
+  }
+  section.hero-text p{
+    font-family: var(--ff-body);
+    color: white;
+    font-size: 15px;
+    margin: 0px 25px;
+    opacity: 80%;
+    margin-bottom: 1.5rem;
+  }
+
+  section.hero-text button{
+    border: none;
+    padding: 10px 80px;
+    border-radius: 1rem;
+    color: var(--clr-violet);
+    font-family: var(--ff-body);
+    font-size: 0.8em;
+    font-weight: 500;
+    box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
 }
